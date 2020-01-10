@@ -17,7 +17,19 @@ import java.util.StringTokenizer;
 public class TexQuotes272 {
 	
 	private void solve() throws IOException {
-
+		boolean flag =true;
+		while(true) {
+			String word= read();
+			for(char c:word.toCharArray()) {
+				if(c == '"') {
+					wr.print((flag)?"``":"''");
+					flag = !flag;
+				}
+				else
+					wr.print(c);
+			}
+			wr.println();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -47,13 +59,13 @@ public class TexQuotes272 {
 			res = tokenizer.nextToken();
 		} else {
 			String aux = scan.readLine();
-			//if(aux.isEmpty()){
-			//	wr.close();
-			//	System.exit(0);
-			//}
+			if(aux == null){
+				wr.close();
+				System.exit(0);
+			}
 
-			tokenizer = new StringTokenizer(aux, " ");
-			res = tokenizer.nextToken();
+			//tokenizer = new StringTokenizer(aux, " ");
+			res = aux;
 		}
 		return res;
 	}
