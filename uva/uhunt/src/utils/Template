@@ -1,0 +1,72 @@
+${:import(java.io.BufferedReader,
+			java.io.IOException,
+			java.io.InputStreamReader,
+ 			java.io.PrintWriter,
+ 			java.util.Arrays,
+ 			java.util.Collection,
+ 			java.util.Collections,
+ 			java.util.StringTokenizer,
+ 			java.util.ArrayList,
+ 			java.util.List,
+ 			java.util.LinkedList,
+ 			java.math.BigInteger,
+ 			java.io.File)}
+    private  void solve() throws IOException 
+    {
+  
+    }
+    public static void main(String[] args) 
+    {
+        ${enclosing_type} var=new ${enclosing_type}();
+        var.run();
+    }
+
+    private BufferedReader scan;
+    private StringTokenizer tokenizer;
+    private PrintWriter wr;
+    public  int readInteger() throws  IOException
+    {
+        return Integer.parseInt(read());
+    }
+    public  long readLong()throws IOException
+    {
+        return Long.parseLong(read());
+    }
+    public  double readDouble()throws IOException
+    {
+        return Double.parseDouble(read());
+    }
+	public String read() throws IOException {
+		String res = "";
+		if (tokenizer.hasMoreTokens()) {
+			res = tokenizer.nextToken();
+		} else {
+			String aux = scan.readLine();
+			//if(aux.isEmpty()){
+			//	wr.close();
+			//	System.exit(0);
+			//}
+			
+			tokenizer = new StringTokenizer(aux, " ");
+			res = tokenizer.nextToken();
+		}
+		return res;
+	}
+
+	public void run() {
+		try {
+			scan = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/utils/input")));
+			tokenizer = new StringTokenizer("", "");
+			//wr = new PrintWriter(new File("src/utils/output"));
+			wr = new PrintWriter(System.out);
+
+			solve();
+
+			scan.close();
+			wr.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			wr.close();
+			System.exit(0);
+		}
+	}
