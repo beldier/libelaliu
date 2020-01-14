@@ -42,7 +42,7 @@ ${:import(java.io.BufferedReader,
 			res = tokenizer.nextToken();
 		} else {
 			String aux = scan.readLine();
-			//if(aux.isEmpty()){
+			//if(aux == null){
 			//	wr.close();
 			//	System.exit(0);
 			//}
